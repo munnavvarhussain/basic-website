@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Website</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">My Website</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="login.html" class="btn">Login</a></li>
+      </ul>
+    </nav>
+    <button id="darkModeToggle" class="dark-toggle" title="Toggle Dark Mode">🌙</button>
+  </header>
+
+  <main class="main-content">
+    <h1>Welcome to My Website</h1>
+    <p>Your one-stop solution for <strong>awesome services</strong></p>
+
+    <section class="mission">
+      <h2>Our Mission</h2>
+      <p>We offer amazing services to help you grow.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 My Website</p>
+  </footer>
+
+  <script>
+    const toggle = document.getElementById("darkModeToggle");
+    const body = document.body;
+
+    if (localStorage.getItem("mode") === "dark") {
+      body.classList.add("dark-mode");
+    }
+
+    toggle.addEventListener("click", () => {
+      body.classList.toggle("dark-mode");
+      localStorage.setItem("mode", body.classList.contains("dark-mode") ? "dark" : "light");
+    });
+  </script>
+</body>
+</html>

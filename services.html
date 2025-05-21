@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Services - My Website</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <a href="login.html" class="login-btn">Login</a>
+    <button id="darkModeToggle" class="dark-toggle">🌙</button>
+
+    <h1>Our Services</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Dark Mode Toggle -->
+  <script>
+    function toggleDarkMode() {
+      document.body.classList.toggle('dark-mode');
+    }
+  </script>
+  <button onclick="toggleDarkMode()">Toggle Dark Mode</button>
+
+  <main>
+    <img src="C:\Users\M Husain\Desktop\basic website\images\person-front-computer-working-html.jpg" alt="Services Image" width="150"><br>
+    <h2>What We Offer</h2>
+    <ul>
+      <li><strong>Web Design:</strong> Responsive and modern layouts for all devices.</li>
+      <li><strong>Web Development:</strong> Static and dynamic websites tailored to your needs.</li>
+      <li><strong>SEO Optimization:</strong> Improve your visibility in search engines.</li>
+      <li><strong>Support & Maintenance:</strong> Ongoing help to keep your site running smoothly.</li>
+    </ul>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 My Website</p>
+  </footer>
+  <script>
+  const toggle = document.getElementById("darkModeToggle");
+  const body = document.body;
+
+  // Load saved mode
+  if (localStorage.getItem("mode") === "dark") {
+    body.classList.add("dark-mode");
+  }
+
+  toggle.addEventListener("click", () => {
+    body.classList.toggle("dark-mode");
+    localStorage.setItem("mode", body.classList.contains("dark-mode") ? "dark" : "light");
+  });
+</script>
+
+</body>
+</html>
